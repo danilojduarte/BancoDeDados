@@ -1,8 +1,20 @@
-insert into pessoas
-(nome, nascimento, sexo, peso, altura, nacionalidade)
-values
-(DEFAULT, 'Danilo', '1984-10-04', 'M', '74,0', '1.69', 'Brasil'),
-(default, 'Isis', '1986-02-24', 'F', '76,01', '1.57', 'Brasil'),
-(default, 'Isabela', '2017-07-03', 'F', '20.8', '1.00', 'Brasil');
+describe pessoas;
+
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+alter table pessoas
+add column codigo int first;
+
+alter table pessoas
+modify column profissao varchar(20) not null default '';
+
+alter table pessoas
+change column profissao prof varchar(20);
 
 select * from pessoas;
+
+alter table pessoas
+drop column profissao;
+
+
