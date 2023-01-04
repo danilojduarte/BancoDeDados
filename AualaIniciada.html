@@ -47,8 +47,16 @@ add column profissao varchar(10) after nome;
 alter table pessoas
 add column codigo int first;
 
+*Para modificar colunas {
+
 alter table pessoas
 modify column profissao varchar(20) not null default '';
+}
+
+*Para modificar o nome da tabela {
+    alter table pessoas
+    rename to gafanhotos;
+}
 
 alter table pessoas
 change column profissao prof varchar(20);
@@ -59,4 +67,24 @@ alter table pessoas
 drop column profissao;
 
 
+* Criando nova tabela {
+
+    create table if not exists cursos (
+        nome varchar(30) not null  unique,
+        descricao text,
+        carga int unsigned,
+        totalaulas int,
+        ano year default '2016'
+        ) default charset = utf8;
+
+}
+
+*Apagando coluna {
+    alter table drop
+}
+
+
+*Como apagar uma tabela {
+    drop table if exists teste;
+}
 
